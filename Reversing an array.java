@@ -4,27 +4,27 @@ public class Main{
      public static void main(String []args)
      {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int[] array = new int[n];
-        for (int i = 0; i < n ; i++)
+        int arrSize = sc.nextInt();
+        int[] array = new int[arrSize];
+        for (int index = 0; index < arrSize ; index++)
         {
-            array[i] = sc.nextInt();
+            array[index] = sc.nextInt();
         }
-        int i;
-        int j = n-1;
+        int startIndex;
+        int endIndex = arrSize-1;
         int temp;
-        i = 0;
-        while(i<j)
+        startIndex = 0;
+        while(startIndex<endIndex)
         {
-            temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-            i++;
-            j--;
+            temp = array[startIndex];
+            array[startIndex] = array[endIndex];
+            array[endIndex] = temp;
+            startIndex++;
+            endIndex--;
         }
-        for (i=0;i<n;i++)
+        for(int index = 0; index < arrSize ; index++)
         {
-            System.out.print(array[i]);
+            System.out.print(array[index]+" ");
         }
     }
 }
